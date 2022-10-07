@@ -17,8 +17,13 @@ io.on('connection', (socket) => {
     console.log('user disconnected')
   })
   socket.on('send-message', (data) => {
-    console.log(data)
     socket.broadcast.emit('message-from-server', data)
+  })
+  socket.on('typing-started', () => {
+    socket.broadcast.emit('typing-from-server')
+  })
+  socket.on('typing-end', () => {
+    socket.broadcast.emit('typing-from-server-end')
   })
 })
 
