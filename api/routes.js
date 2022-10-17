@@ -7,4 +7,10 @@ router.get('/rooms', async (req, res) => {
   return res.json({ rooms })
 })
 
+router.delete('/rooms/roomId', async (req, res) => {
+  const { roomId } = req.params
+  await Room.deleteOne({ roomId })
+  res.json({ data: { message: 'deleted' } })
+})
+
 export default router
