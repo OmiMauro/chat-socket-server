@@ -13,6 +13,7 @@
   "author": "Manu Omiñuka",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.1",
     "socket.io": "^4.5.2"
   }
