@@ -4,7 +4,7 @@ export default class TypingController extends BaseController {
   typingStarted = ({ roomId }) => {
     let skt = this.socket.broadcast
     skt = roomId ? skt.to(roomId) : skt
-    socket.emit('typing-from-server')
+    skt.emit('typing-from-server')
   }
   typingStoped = ({ roomId }) => {
     let skt = this.socket.broadcast
